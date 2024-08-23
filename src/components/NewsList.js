@@ -74,7 +74,7 @@ const NewsList = ({ path }) => {
                   <div className='flex gap-5'>
                       <img src={item.thumbnail} alt="news" className="w-32 h-auto rounded-lg object-cover" />
                       <div>
-                      <a href={news.link}>
+                      <a href={item.link}>
                         <h1 className='font-semibold text-black/70 text-sm lg:text-xl md:text-xl hover:text-blue-400 duration-100 cursor-pointer'>{item.title}</h1>
                       </a>
                         <p className='font-semibold text-gray-500/70 text-sm'>{timeAgo(item.pubDate)}</p>
