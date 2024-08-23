@@ -64,8 +64,9 @@ const NewsGridThird = ({path}) => {
         <h1 className='text-2xl font-semibold mb-8'>All News Post</h1>
        <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-3'>
         {news.map((item, index) => (
-            <div key={index} className='p-4 shadow-md rounded-lg space-y-4'>
-                <img src={item.thumbnail} alt={item.title} className='w-full h-50 rounded-lg object-cover'/>
+           <a href={item.link}>
+            <div key={index} className='p-4 shadow-md rounded-lg space-y-4 h-full'>
+                <img src={item.thumbnail} alt={item.title} className='w-full h-50 rounded-lg object-cover hover:scale-105 duration-300'/>
                <div className='mt-4 flex items-center space-x-4 '>
                     { logo && (
                         <img src={logo.image} alt={logo.title} className='w-5'/>
@@ -75,6 +76,7 @@ const NewsGridThird = ({path}) => {
                 <h1 className='text-md font-bold mt-2'>{item.title}</h1>
                 <p className='text-gray-400 font-semibold text-sm mt-2'>{item.description}</p>
             </div>
+           </a> 
         ))}
        </div>
        {limit < totalItems && (
